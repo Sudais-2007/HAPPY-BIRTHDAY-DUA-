@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Dua ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:black;
+color:white;
+overflow-x:hidden;
+}
+
+/* 🌙 CINEMATIC BACKGROUND */
+.bg{
+position:fixed;
+width:100%;
+height:100vh;
+background: radial-gradient(circle at top, #1a1a2e, #000);
+overflow:hidden;
+z-index:-2;
+}
+
+.light{
+position:absolute;
+width:8px;
+height:8px;
+background:white;
+border-radius:50%;
+opacity:0.6;
+animation:float 6s infinite ease-in-out;
+box-shadow:0 0 10px white,0 0 20px #aaa;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-100px);}
+100%{transform:translateY(0);}
+}
+
+/* PASSWORD */
+#passwordScreen{
+position:fixed;
+width:100%;
+height:100vh;
+background:black;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:999;
+text-align:center;
+padding:20px;
+}
+
+input{
+padding:10px;
+border-radius:10px;
+border:none;
+margin-top:10px;
+text-align:center;
+}
+
+button{
+margin-top:10px;
+padding:10px 20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+/* MAIN */
+#main{
+display:none;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+/* SECTIONS */
+.section{
+padding:50px 20px;
+text-align:center;
+}
+
+/* GALLERY */
+.gallery{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.gallery img{
+width:180px;
+height:180px;
+object-fit:cover;
+border-radius:15px;
+margin:10px;
+}
+
+/* FLOWERS */
+.flower{
+position:fixed;
+top:-10px;
+font-size:20px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{transform:translateY(110vh);}
+}
+
+/* TYPEWRITER */
+#typewriter{
+white-space:pre-wrap;
+border-right:2px solid white;
+display:inline-block;
+max-width:90%;
+text-align:left;
+font-size:16px;
+line-height:1.6;
+}
+
+/* SECRET SECTION */
+#secret{
+display:none;
+margin-top:20px;
+}
+
+#secret img{
+width:250px;
+border-radius:15px;
+margin-top:10px;
+box-shadow:0 0 20px rgba(255,255,255,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🌙 BACKGROUND -->
+<div class="bg" id="bg"></div>
+
+<!-- PASSWORD SCREEN -->
+<div id="passwordScreen">
+<h2>Enter Password 💖</h2>
+<p>Hint: tubelight 👀</p>
+
+<input id="pass" type="password" placeholder="Enter password">
+<button onclick="checkPass()">Enter</button>
+
+<p style="opacity:0.5;margin-top:15px;">
+Made with love for Dua ❤️
+</p>
+</div>
+
+<!-- MAIN -->
+<div id="main">
+
+<div class="hero">
+<h1>Happy Birthday Dua ❤️</h1>
+<p>20 June — the day my favorite person came into the world.</p>
+</div>
+
+<div class="section">
+<h2>Our Timeline ⏳</h2>
+<p>Strangers → Friends → Late night talks → Us ❤️</p>
+</div>
+
+<div class="section">
+<h2>Our Memories 📸</h2>
+
+<div class="gallery">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+</div>
+</div>
+
+<div class="section">
+<h2>Message For You 💌</h2>
+<div id="typewriter"></div>
+</div>
+
+<div class="section">
+<h2>Our Song 🎵</h2>
+<audio controls autoplay loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="section">
+<h2>Final Surprise ❤️</h2>
+
+<button onclick="showSecret()">Press this ❤️</button>
+
+<div id="secret">
+<p>sorry just felt like adding this now</p>
+<img src="photo5.jpg">
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* PASSWORD */
+function checkPass(){
+let p = document.getElementById("pass").value;
+
+if(p === "tubelight"){
+document.getElementById("passwordScreen").style.display="none";
+document.getElementById("main").style.display="block";
+startFlowers();
+startTyping();
+createLights();
+}else{
+alert("Wrong password ❤️");
+}
+}
+
+/* FLOWERS */
+function startFlowers(){
+setInterval(()=>{
+let f = document.createElement("div");
+f.classList.add("flower");
+f.innerHTML="🌸";
+
+f.style.left=Math.random()*100+"vw";
+f.style.animationDuration=(Math.random()*3+2)+"s";
+f.style.fontSize=(Math.random()*10+15)+"px";
+
+document.body.appendChild(f);
+
+setTimeout(()=>{f.remove()},6000);
+},150);
+}
+
+/* TYPEWRITER */
+function startTyping(){
+
+let text = `Dua,
+
+I just wanted to tell you something from the heart.
+
+You’re honestly the cutest person I’ve ever met. No matter what differences we’ve had or whatever small issues came up between us, I swear I’ve tried so hard to feel otherwise, but I just couldn’t.
+
+You used to be my sweet baby in my own way, and I don’t think I could ever truly hate you. Even now, you still cross my mind more than you probably realize.
+
+Even though we don’t talk much anymore, there’s still something about you that feels special.
+
+I still feel happy when I see your snaps, or even when I randomly think about you.
+
+Happy Birthday, Dua.
+
+I hope you always stay the happiest version of yourself.`;
+
+let i = 0;
+function type(){
+if(i < text.length){
+document.getElementById("typewriter").innerHTML += text.charAt(i);
+i++;
+setTimeout(type, 25);
+}
+}
+type();
+}
+
+/* SECRET BUTTON */
+function showSecret(){
+document.getElementById("secret").style.display="block";
+}
+
+/* GLowing lights */
+function createLights(){
+for(let i=0;i<30;i++){
+let l = document.createElement("div");
+l.classList.add("light");
+l.style.left = Math.random()*100+"vw";
+l.style.top = Math.random()*100+"vh";
+l.style.animationDuration = (3+Math.random()*5)+"s";
+document.getElementById("bg").appendChild(l);
+}
+}
+
+</script>
+
+</body>
+</html>
